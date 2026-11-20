@@ -17,7 +17,7 @@ Site web de luxe complet pour l'hôtel **La Colongette Antsirabe** (Madagascar),
 | **Icônes** | lucide-react |
 | **Dates** | date-fns |
 | **Pages** | 7 (Accueil, Chambres & Suites, Restaurant, Piscine & Bien-être, Réunions & Événements, Découvrir Antsirabe, Contact) |
-| **Backend** | Aucun — site 100% statique (formulaires en `console.log`, prêt à connecter à une API) |
+| **Backend** | API Node.js séparée pour les demandes de contact, réservation et événement ; envoi par e-mail via Resend, sans base de données |
 | **Déploiement cible** | N'importe quel hébergeur de sites statiques (Cloudflare Pages, Netlify, Vercel, etc.) |
 
 ---

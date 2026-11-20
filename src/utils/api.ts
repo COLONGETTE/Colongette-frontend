@@ -33,6 +33,34 @@ const discoverFallback = {
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api'
 
+const REQUESTS_API_URL = (import.meta.env.VITE_REQUESTS_API_URL || 'http://localhost:4100')
+  .replace(/\/+$/, '')
+const REQUESTS_API_PATH = `${REQUESTS_API_URL.endsWith('/api') ? REQUESTS_API_URL : `${REQUESTS_API_URL}/api`}/requests`
+
+type RequestKind = 'contact' | 'reservation' | 'event'
+
+async function sendRequest(
+  type: RequestKind,
+  data: Record<string, unknown>
+): Promise<{ data?: { ok: boolean }; error?: string }> {
+  let response: Response
+  try {
+    response = await fetch(REQUESTS_API_PATH, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, page: window.location.pathname, data }),
+    })
+  } catch {
+    return { error: 'Network error' }
+  }
+
+  const body = await response.json().catch(() => ({}))
+  if (!response.ok) {
+    return { error: body.error || `Request failed (${response.status})` }
+  }
+  return { data: { ok: true } }
+}
+
 /** Réponse de `POST /bookings/availability`. */
 export interface AvailabilityResult {
   available: boolean
@@ -197,9 +225,16 @@ export const api = {
     adults: number
     children: number
     roomId?: string
-  }) => request<any>('/bookings', {
-    method: 'POST',
-    body: JSON.stringify(data),
+  }) => sendRequest('reservation', {
+    name: data.guestName,
+    email: data.guestEmail,
+    phone: data.guestPhone,
+    checkIn: data.checkIn,
+    checkOut: data.checkOut,
+    rooms: data.rooms,
+    adults: data.adults,
+    children: data.children,
+    roomId: data.roomId,
   }),
 
   // Contact
@@ -209,10 +244,7 @@ export const api = {
     phone: string
     subject: string
     message: string
-  }) => request<any>('/contact', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
+  }) => sendRequest('contact', data),
 
   sendEventInquiry: (data: {
     name: string
@@ -222,10 +254,7 @@ export const api = {
     message: string
     eventDate: string
     guestCount: string
-  }) => request<any>('/contact/event-inquiry', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
+  }) => sendRequest('event', data),
 
   // Newsletter
   subscribeNewsletter: (email: string) => request<any>('/newsletter', {
