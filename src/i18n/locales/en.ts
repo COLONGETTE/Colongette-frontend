@@ -136,7 +136,7 @@ const en = {
       bedType: 'King-size bed',
     },
     suite: {
-      name: 'Royal Suite',
+      name: 'Colongette Suite',
       description:
         'Suite with separate living room, bathroom with bathtub, and dedicated concierge service. The pinnacle of luxury at La Colongette.',
       view: 'Panoramic view',

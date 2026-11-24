@@ -136,7 +136,7 @@ const fr = {
       bedType: 'Lit king size',
     },
     suite: {
-      name: 'Suite Royale',
+      name: 'Suite Colongette',
       description:
         'Suite avec salon séparé, salle de bain avec baignoire, et service de conciergerie dédié. Le summum du luxe à La Colongette.',
       view: 'Vue panoramique',
