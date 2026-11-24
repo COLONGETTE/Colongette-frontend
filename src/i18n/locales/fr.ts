@@ -273,7 +273,7 @@ const fr = {
     errorMessage: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.',
     infoTitle: 'Nos coordonnées',
     addressLabel: 'Adresse',
-    address: "RN7, Lot 512 C 61 Tsarasaotra, Route d'Ambositra, Antsirabe 110, Madagascar",
+    address: "Lot 512 C 61 Tsarasaotra, Route d'Ambositra, Antsirabe 110, Madagascar",
     phoneInfoLabel: 'Téléphone',
     emailInfoLabel: 'E-mail',
     mapTitle: 'Nous trouver',
@@ -290,7 +290,7 @@ const fr = {
     newsletterPlaceholder: 'Votre adresse e-mail',
     newsletterButton: "S'inscrire",
     rights: 'Tous droits réservés.',
-    address: "RN7 Lot 512 C 61 Tsarasaotra, Route d'Ambositra, Antsirabe, Madagascar",
+    address: "Lot 512 C 61 Tsarasaotra, Route d'Ambositra, Antsirabe 110, Madagascar",
   },
   booking: {
     title: 'Réservation',

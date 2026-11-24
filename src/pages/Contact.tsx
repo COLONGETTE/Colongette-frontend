@@ -53,16 +53,18 @@ export default function Contact() {
               <Phone size={18} className="text-gold-500 mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.phoneInfoLabel')}</div>
-                <a href="tel:+261344904040" className="text-gray-600 hover:text-gold-600 block">+261 34 49 040 40</a>
-                <a href="tel:+261204449040" className="text-gray-600 hover:text-gold-600 block">+261 20 44 490 40</a>
+                <a href="tel:+261385404040" className="text-gray-600 hover:text-gold-600 block">+261 38 54 040 40</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail size={18} className="text-gold-500 mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.emailInfoLabel')}</div>
-                <a href="mailto:royalpalace.resa@moov.mg" className="text-gray-600 hover:text-gold-600 block">
-                  royalpalace.resa@moov.mg
+                <a href="mailto:reception@lacolongette.mg" className="text-gray-600 hover:text-gold-600 block">
+                  reception@lacolongette.mg
+                </a>
+                <a href="mailto:contact@hotel-la-colongette.com" className="text-gray-600 hover:text-gold-600 block">
+                  contact@hotel-la-colongette.com
                 </a>
               </div>
             </div>

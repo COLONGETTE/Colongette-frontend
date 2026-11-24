@@ -57,7 +57,22 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <div className="text-white uppercase tracking-widest2 text-xs mb-5 font-medium">{t('footer.contactTitle')}</div>
-          <p className="text-sm">{t('footer.contactComingSoon')}</p>
+          <address className="text-sm not-italic space-y-3">
+            <p>{t('footer.address')}</p>
+            <p>
+              <a href="tel:+261385404040" className="hover:text-gold-500 transition-colors">
+                +261 38 54 040 40
+              </a>
+            </p>
+            <p>
+              <a href="mailto:reception@lacolongette.mg" className="hover:text-gold-500 transition-colors block">
+                reception@lacolongette.mg
+              </a>
+              <a href="mailto:contact@hotel-la-colongette.com" className="hover:text-gold-500 transition-colors block">
+                contact@hotel-la-colongette.com
+              </a>
+            </p>
+          </address>
         </div>
 
         {/* Newsletter */}
