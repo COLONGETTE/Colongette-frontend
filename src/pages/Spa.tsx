@@ -49,7 +49,6 @@ export default function Spa() {
         </div>
       </section>
 
-      {/* Menu des soins volontairement masqué ; il sera réactivé uniquement sur demande. */}
 
       {/* Gallery */}
       <section className="bg-cream py-20 md:py-24">
