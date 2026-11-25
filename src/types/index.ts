@@ -62,6 +62,8 @@ export interface SpaTreatment {
   descriptionEn?: string | null
   price: number
   order?: number
+  sortOrder?: number
+  isActive?: boolean
 }
 
 export interface DiscoverItem {

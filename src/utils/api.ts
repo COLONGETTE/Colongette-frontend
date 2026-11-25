@@ -177,7 +177,11 @@ async function withFallback<T>(
   fallback: T
 ): Promise<ApiResponse<T>> {
   const response = await call()
-  if (response.error || !response.data) {
+  if (
+    response.error ||
+    !response.data ||
+    (Array.isArray(response.data) && response.data.length === 0)
+  ) {
     return { data: fallback }
   }
   return response
