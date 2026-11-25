@@ -44,7 +44,7 @@ const en = {
     introText:
       "Located in the heart of Antsirabe, along the RN7 leading to southern Madagascar, La Colongette invites you to discover its exceptional and elegant setting, offering the best service to make your stay unforgettable. Its proximity to the city, an outstanding restaurant, a magnificent garden and swimming pool make La Colongette a destination of choice in Antsirabe.",
     servicesEyebrow: 'Our Services',
-    servicesTitle: 'A 5-star experience at every moment',
+    servicesTitle: 'A 3-star experience at every moment',
     service1Title: 'Rooms & Suites',
     service1Text: 'Spacious, refined spaces designed for your absolute comfort.',
     service2Title: 'Fine Dining Restaurant',
