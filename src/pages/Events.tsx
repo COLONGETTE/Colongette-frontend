@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import SectionHeading from '@/components/SectionHeading'
 import { equipmentKeys } from '@/data/events'
 import type { EventFormData, EventRoom } from '@/types'
-import { validateEmail } from '@/utils/helpers'
+import { validateEmail, validatePhone } from '@/utils/helpers'
 import { api, resolveImageUrl } from '@/utils/api'
 
 export default function Events() {
@@ -82,12 +82,17 @@ export default function Events() {
       setSubmitError('Veuillez saisir une adresse email valide.')
       return
     }
+    if (!validatePhone(form.phone)) {
+      setSubmitError('Veuillez saisir un numéro de téléphone valide.')
+      return
+    }
     if (!form.eventDate) {
       setSubmitError("Veuillez choisir la date de l'événement.")
       return
     }
-    if (!form.guestCount || Number(form.guestCount) < 1) {
-      setSubmitError("Veuillez indiquer le nombre de personnes.")
+    const guestCount = Number(form.guestCount)
+    if (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 1000) {
+      setSubmitError('Veuillez indiquer un nombre de personnes entre 1 et 1000.')
       return
     }
     if (!form.message.trim()) {
@@ -209,6 +214,8 @@ export default function Events() {
                   required
                   type="number"
                   min={1}
+                  max={1000}
+                  step={1}
                   placeholder="Nombre de personnes"
                   value={form.guestCount}
                   onChange={(e) => update('guestCount', e.target.value)}
